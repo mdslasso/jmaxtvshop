@@ -1,0 +1,800 @@
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+.container-credit {
+    width: 100%;
+    background-color: gray;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+
+}
+
+.menu {
+    height: 100vh;
+    width: 200px;
+    background-color: #222;
+
+
+}
+
+.menu h2 {
+    height: 6vh;
+    line-height: 50px;
+    width: 100%;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    background-color: red;
+
+}
+
+.menu li img {
+    width: 30px;
+    height: 30px;
+
+
+}
+
+.menu h2 a {
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+}
+
+
+.menu-list {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    height: 92vh;
+
+
+}
+
+.menu-list li {
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+    gap: 5px;
+    border-bottom: 1px solid gray;
+
+}
+
+.menu-list li a {
+    text-decoration: none;
+    color: whitesmoke;
+    text-transform: uppercase;
+
+}
+
+.menu-list li a:hover {
+
+    color: red;
+}
+
+
+.menu-list li span {
+    display: block;
+    font-size: 13px;
+    margin-top: 8px;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+
+.menu-list img {
+    width: 30px;
+    height: 30px;
+
+}
+
+.container-credit .cadre {
+    height: 100vh;
+    width: 100%;
+    background-color: white;
+}
+
+.cadre-entete {
+
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    justify-content: space-between;
+
+
+}
+
+.cadre-entete select {
+    padding: 5px;
+
+}
+
+
+.cadre-entete a {
+    background-color: black;
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 3px;
+    font-size: 13px;
+    color: white;
+}
+
+.cadre-entete a:hover {
+    background-color: black;
+    color: white;
+}
+
+
+.container-login {
+    background: whitesmoke;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+
+.container-login form {
+    width: 400px;
+    height: 300px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    box-shadow: 10px 10px 10px 10px black;
+
+}
+
+.container-login form h1 {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 50px;
+    color: gray;
+    font-weight: bold;
+}
+
+
+.container-home {
+    background-color: whitesmoke;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.options {
+    background-color: white;
+    padding: 20px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 50px;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px 10px black;
+
+}
+
+.options li {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+}
+
+
+.options li img {
+    width: 80px;
+    height: 80px;
+
+}
+
+.options li img:hover {
+    border: 1px solid black;
+}
+
+.options li span {
+    font-weight: bold;
+
+}
+
+.cadre-credit {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.menu-credit {
+    height: 20vh;
+    width: 200px;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+
+}
+
+.menu-credit div {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+    padding: 15px;
+
+
+}
+
+.menu-credit li {
+    display: block;
+    border-bottom: 1px solid whitesmoke;
+
+}
+
+.menu-credit li a {
+    text-decoration: none;
+    color: whitesmoke;
+    font-size: 15px;
+
+}
+
+.menu-credit li a:hover {
+    color: red;
+
+
+}
+
+
+.cadre-credit-paiement {
+    width: 100%;
+    display: flex;
+    flex-direction: column;;
+
+}
+
+
+.action-ico {
+    text-align: center;
+
+
+}
+
+.action-ico svg {
+    height: 16px;
+    width: 16px;
+
+}
+
+
+.action-ico a {
+    background: none;
+    text-decoration: none;
+    color: blue;
+
+}
+
+.action-ico a:hover {
+    color: black;
+
+
+}
+
+
+.action-ico .delete {
+    color: red;
+}
+
+.cadre-form {
+    width: 100%;
+    height: 86vh;
+    display: flex;
+    flex-direction: column;
+    background-color: wheat;
+    padding: 10px;
+
+}
+
+.cadre-form h1 {
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    box-shadow: 2px 2px 2px 2px black;
+    font-size: 25px;
+    text-transform: uppercase;
+}
+
+.cadre-form h1 span {
+    font-weight: bold;
+    text-transform: uppercase;
+    color: red
+}
+
+.cadre-form form {
+    width: 50%;
+    margin: auto;
+
+}
+
+.cadre-filtre {
+    width: 100%;
+    height: 86vh;
+    overflow: auto;
+    background-color: wheat;
+
+}
+
+
+.cadre-filtre td {
+    width: 16%;
+    border: 1px solid snow;
+    text-align: center;
+    font-size: 12px;
+    text-transform: capitalize;
+}
+
+.total {
+    width: 100%;
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 5vh;
+}
+
+.total h1 {
+    margin: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 3px;
+    color: white;
+}
+
+.total h2 {
+    margin: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 3px;
+    color: white;
+    background-color: red;
+    border-radius: 2px;
+}
+
+
+table {
+    width: 100%;
+}
+
+
+.entete-table {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+.entete-table li {
+    display: inline-block;
+    background-color: black;
+    width: 17%;
+    text-align: center;
+    border-left: 1px solid whitesmoke;
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+
+}
+
+
+.body-table {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 30vh;
+    overflow: auto;
+    background-color: wheat;
+
+
+}
+
+.body-table li {
+    display: inline-block;
+    text-align: center;
+    border-left: 1px solid whitesmoke;
+    color: white;
+}
+
+
+.add-table {
+
+
+}
+
+.add-table th {
+    border: 1px solid black;
+    text-align: center;
+    background-color: wheat;
+    color: black;
+}
+
+.add-table td {
+    border: 1px solid black;
+    text-align: center;
+    font-size: 12px;
+
+}
+
+
+.cadre-client {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.container-client {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100vh;
+
+
+}
+
+.client-list {
+    width: 300px;
+    margin: 5px;
+
+}
+
+.list {
+    height: 86vh;
+    background-color: lightyellow;
+    padding: 5px;
+    margin-top: 10px;
+    overflow: auto;
+}
+
+.list li {
+    display: block;
+    border-bottom: 1px solid gainsboro;
+    padding: 5px;
+}
+
+.list a {
+    text-decoration: none;
+    font-size: 13px;
+    color: grey;
+}
+
+.list a:hover {
+    color: black;
+}
+
+
+.list li img {
+    width: 25px;
+    height: 25px;
+}
+
+.list li svg {
+    width: 20px;
+    height: 20px;
+}
+
+.list li span {
+
+    float: right;
+}
+
+
+.add-client {
+    height: 5vh;
+    text-align: center;
+    display: block;
+    background-color: whitesmoke;
+    padding: 5px;
+    margin-top: 18px;
+    text-decoration: none;
+    border-radius: 5px;
+    color: black;
+    font-weight: bold;
+    box-shadow: 1px 1px 1px 1px black;
+}
+
+.add-client:hover {
+    background-color: black;
+    color: white;
+
+}
+
+
+.client-credit-paiement {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: whitesmoke;
+
+}
+
+.credit-paiement {
+    display: flex;
+    flex-direction: row;
+
+}
+
+
+.entete-client {
+    width: 100%;
+    height: 20vh;
+    background-color: #222222;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+
+}
+
+
+.entete-client h1 {
+    font-size: 13px;
+    font-weight: bold;
+    color: whitesmoke;
+}
+
+
+.entete-client div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+
+}
+
+.entete-client div svg {
+    width: 16px;
+    height: 16px;
+
+
+}
+
+.entete-client .nom span {
+    color: whitesmoke;
+    font-size: 13px;
+
+}
+
+.entete-table-client {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+.entete-table-client li {
+    display: inline-block;
+    background-color: black;
+    width: 25%;
+    text-align: center;
+    border-left: 1px solid whitesmoke;
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.paiement li {
+    background-color: red;
+
+}
+
+
+.credit {
+    width: 50%;
+    height: 85vh;
+    background-color: wheat;
+    overflow: auto;
+}
+
+.paiement {
+
+    width: 50%;
+    height: 85vh;
+    background-color: aqua;
+    overflow: auto;
+}
+
+
+.client-cadre-credit-paiement td {
+    width: 25%;
+    border: 1px solid snow;
+    text-align: center;
+    font-size: 11px;
+    text-transform: capitalize;
+}
+
+.bilan {
+    background-color: red;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5px;
+
+}
+
+
+.search-form {
+    width: 100%;
+    margin: auto;
+    padding: 5px;
+    background-repeat: no-repeat;
+    background-position: right;
+    border: 1px solid black;
+
+
+}
+
+
+.client-carte-credit-paiement {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: whitesmoke;
+
+}
+
+
+.credit-carte {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.entete-carte {
+    width: 100%;
+    height: 30vh;
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+
+}
+
+
+.cartes {
+    width: 70%;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.depots {
+
+    width: 30%;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+
+
+}
+
+
+.depots li {
+    width: 50%;
+    background-color: red;
+
+}
+
+.depots tr {
+    border-bottom: 1px solid whitesmoke;
+
+
+}
+
+.depots td {
+    width: 50%;
+    text-align: center;
+    font-size: 12px;
+
+}
+
+
+.nom-carte {
+    width: 380px;
+    height: 230px;
+    background-size: cover;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.nom-carte h1 {
+    font-size: 25px;
+    text-transform: uppercase;
+    margin: 10px;
+    font-weight: bold;
+    color: whitesmoke;
+}
+
+.nom-carte h2 {
+    font-size: 20px;
+    margin: 10px;
+    color: whitesmoke;
+}
+
+.carte-cadre-credit {
+    height: 60vh;
+    background-color: wheat;
+    overflow: auto;
+
+}
+
+.carte-cadre-credit td {
+    display: inline-block;
+    width: 20%;
+    text-align: center;
+    color: black;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.carte-cadre-credit tr {
+    border-bottom: 1px solid whitesmoke;
+}
+
+
+.carte-cadre-depot {
+    background-color: yellow;
+    height: 60vh;
+    overflow: auto;
+}
+
+
+.action-carte {
+    width: 100%;
+
+
+}
+
+.action-carte a {
+    text-decoration: none;
+    float: right;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 13px;
+    box-shadow: 2px 2px 2px 2px black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,32 @@
+{% load static %}
+
+<div class="menu">
+
+
+    <div class="menu-list">
+
+
+        <li><img src="{% static 'app/img/credit.png' %}"><a href="{% url 'app:credits' %}"><span>Долги</span></a>
+        </li>
+
+        <li><img src="{% static 'app/img/paiement.png' %}"><a
+                href="{% url 'app:paiements-credits' %}"><span>Оплата Долга</span></a>
+        </li>
+
+
+        <li><img src="{% static 'app/img/clients.jpeg' %}"><a href="{% url 'app:clients' %}">
+            <span>Клиенты<span
+                    style="color: gray; display: inline;font-size: 12px">( {{ clients.count }} )</span></span></a>
+        </li>
+
+        <li><img src="{% static 'app/img/dates.png' %}"><a href="{% url 'app:add-dates' %}">
+            <span>Даты</span></a>
+        </li>
+
+    </div>
+
+
+    <h2><a href="{% url 'app:logout' %}">LOGOUT</a></h2>
+
+
+</div>

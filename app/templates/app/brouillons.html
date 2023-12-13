@@ -1,0 +1,17 @@
+{% if client %}
+
+    {% if paiement_client.credit__sum == None %}
+        <h1> {{ credit_client.credit__sum|sub:0 }}$</h1>
+
+        {% if paiement_client.credit__sum == None and credit_client.credit__sum == None %}
+            <h1> 0$</h1>
+        {% endif %}
+    {% else %}
+        <h1> {{ credit_client.credit__sum|sub:paiement_client.credit__sum }}$</h1>
+    {% endif %}
+
+{% else %}
+
+    <h1> {{ total_credit.credit__sum|sub:total_paiement.credit__sum }}$</h1>
+
+{% endif %}

@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+
+{% block body %}
+
+
+
+    <div class="container-credit">
+
+        {% include 'includes/menu.html' %}
+
+        <div class="cadre">
+            <div class="cadre-entete">
+
+
+                <table class=" add-table">
+                    <thead>
+
+                    <tr>
+
+                        <th scope="col">Контрагент</th>
+                        <th scope="col">Накладная</th>
+                        <th scope="col">Сумма</th>
+                        <th scope="col">Действия</th>
+                        <th scope="col">Дата</th>
+
+
+                    </tr>
+                    </thead>
+
+                    <tbody>
+
+
+                    {% for credit in credits %}
+
+
+
+                        <tr>
+
+                            <td style="text-align: left; font-weight: bold;font-size: 12px;">{{ credit.client.nom }} </td>
+                            <td>{{ credit.recu }} </td>
+                            <td>{{ credit.credit }}$</td>
+                            {% if credit.action == 'Долг' %}
+                                <td style="color: red">{{ credit.action }}</td>
+                            {% else %}
+                                <td style="color: blue">Оплатить</td>
+                            {% endif %}
+
+                            <td>{{ credit.date }} </td>
+
+
+                        </tr>
+
+
+
+
+                    {% endfor %}
+
+
+                    </tbody>
+
+                </table>
+
+
+            </div>
+
+
+            <div class="cadre-credit">
+
+
+                <div class="cadre-credit-paiement">
+
+                    <div class="cadre-form">
+
+                        <h1>
+                            ДОБАВИТЬ ДОЛГИ
+                        </h1><br>
+
+                        <form method="post" enctype="multipart/form-data">
+
+                            {% csrf_token %}
+                            {{ form|crispy }}
+
+                            <br><br>
+
+                            <div class="form-group" style="margin: 10px; text-align: center">
+
+
+                                <a class="btn btn-success" href="{% url 'app:credits' %}">Отмена</a>
+
+                                <button class="btn btn-danger" type="submit">Сохранять</button>
+
+                            </div>
+
+
+                        </form>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+{% endblock body %}

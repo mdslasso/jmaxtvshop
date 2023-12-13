@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+
+{% block body %}
+
+
+
+    <div class="container-credit">
+
+
+        {% include 'includes/menu.html' %}
+
+        <div class="cadre" style="background-color: aquamarine">
+
+
+            <div class="cadre-form" style="background-color:aquamarine">
+
+                <h1>
+                    Удалить клиента
+                </h1><br>
+
+                <form method="post" enctype="multipart/form-data">
+
+
+                    {% csrf_token %}
+
+                    <fieldset class="form-group" style="margin: 10px; text-align: center">
+
+                        <legend style="">
+
+                            <span style="font-size: 18px; color: black; text-transform: uppercase; font-weight: bold">{{ object.nom }}</span><br>
+                            <span style="font-size: 16px; color: grey">Телефон : {{ object.numero }}</span><br>
+                            <span style="font-size: 15px;">Город : {{ object.ville }} </span><br>
+                            <span style="font-size: 15px;">Адрес : {{ object.adresse }} </span><br>
+
+
+                        </legend>
+                        <br>
+
+                        <h2 style="font-size: 20px"> Вы уверены, что хотите это удалить? <br>
+                            <p style="margin-top: 5px; font-size: 14px; color: red"> Он будет навсегда удален из базы
+                                данных.</p>
+                        </h2>
+
+                    </fieldset>
+
+
+                    <br><br>
+
+                    <div class="form-group" style="margin: 10px; text-align: center">
+
+                        <a class="btn btn-success" href="{% url 'app:clients' %}">Отмена</a>
+                        <button class="btn btn-danger" type="submit">Удалить</button>
+
+                    </div>
+                    <br><br>
+
+
+                </form>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+{% endblock body %}

@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+
+{% block body %}
+
+
+
+    <div class="container-login">
+
+        <form class="form-login" method="post" enctype="multipart/form-data">
+
+            {% csrf_token %}
+
+            {{ form|crispy }}
+
+            <div class="form-group">
+                <br>
+
+                <button class="btn btn-danger" type="submit">Se Connecter</button>
+
+            </div>
+
+
+            <h1></h1>
+
+        </form>
+
+
+    </div>
+
+
+
+
+
+
+{% endblock body %}

@@ -1,0 +1,199 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% load django_template_maths %}
+
+
+{% block body %}
+
+
+    <div class="container-client">
+
+        {% include 'includes/menu.html' %}
+
+        <div class="cadre-client">
+
+            <div class="client-list">
+                {% include 'includes/menu_clients.html' %}
+
+            </div>
+
+            <div class="client-credit-paiement">
+
+                <div class="entete-client">
+
+
+                    <div class="nom">
+                        {% if client %}
+
+                            <h1 style="font-size: 25px; text-transform: uppercase">{{ client.nom }}</h1>
+                            <span>
+                               <svg style="margin-top: -8px" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                    class="bi bi-telephone" viewBox="0 0 16 16">
+                                <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+                              </svg> : {{ client.numero }}
+                          </span>
+
+                        {% endif %}
+
+                    </div>
+
+                    <div class="bilan">
+                        {% if client %}
+
+                            {% if credit_client.credit__sum == None %}
+                                <h1>ДОЛГИ : <span> 0$ </span></h1>
+                            {% else %}
+                                <h1>ДОЛГИ : <span> {{ credit_client.credit__sum|add_decimal:2 }}$ </span></h1>
+                            {% endif %}
+
+
+                            {% if paiement_client.credit__sum == None %}
+                                <h1>ОПЛАТА : <span> 0$ </span></h1>
+                            {% else %}
+                                <h1>ОПЛАТА : <span> {{ paiement_client.credit__sum|add_decimal:2 }}$ </span></h1>
+                            {% endif %}
+
+                        {% else %}
+                            <h1>ДОЛГИ : <span> {{ total_credit.credit__sum|add_decimal:2 }}$ </span></h1>
+                            <h1>ОПЛАТА : <span> {{ total_paiement.credit__sum|add_decimal:2 }}$ </span></h1>
+
+
+                        {% endif %}
+                    </div>
+
+                </div>
+
+
+                <div class="credit-paiement">
+
+                    <div class="credit">
+                        <div class="entete-table-client">
+                            <li>Накладная</li>
+                            <li>Сума</li>
+                            <li>Действия</li>
+                            <li>Дата</li>
+
+                        </div>
+
+
+                        <div class="client-cadre-credit-paiement">
+
+                            <table>
+
+
+                                <tbody>
+
+                                {% for credit in credits %}
+
+
+
+                                    <tr>
+
+                                        <td>{{ credit.recu }} </td>
+                                        <td>{{ credit.credit }}$</td>
+                                        <td style="color: red">{{ credit.action }}</td>
+                                        <td>{{ credit.date }} </td>
+
+
+                                    </tr>
+
+
+
+
+                                {% endfor %}
+
+
+                                </tbody>
+
+
+                            </table>
+                        </div>
+
+                    </div>
+
+                    <div class="paiement">
+                        <div class="entete-table-client">
+                            <li>Накладная</li>
+                            <li>Сума</li>
+                            <li>Действия</li>
+                            <li>Дата</li>
+
+                        </div>
+
+
+                        <div class="client-cadre-credit-paiement">
+
+                            <table>
+
+
+                                <tbody>
+
+                                {% for paiement in paiements %}
+
+
+
+                                    <tr>
+
+                                        <td>{{ paiement.recu }} </td>
+                                        <td>{{ paiement.credit }}$</td>
+                                        <td style="color: red">{{ paiement.action }}</td>
+                                        <td>{{ paiement.date }} </td>
+
+
+                                    </tr>
+
+
+
+
+                                {% endfor %}
+
+
+                                </tbody>
+
+
+                            </table>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+                <div class="total">
+                    <h1>ДОЛГ :</h1>
+
+                    {% if client %}
+
+                        {% if paiement_client.credit__sum > 0 and credit_client.credit__sum > 0 %}
+
+                            <h2> {{ credit_client.credit__sum|sub:paiement_client.credit__sum|add_decimal:2 }}$</h2>
+
+                        {% elif paiement_client.credit__sum == None and credit_client.credit__sum == None %}
+                            <h2> 0$</h2>
+
+                        {% elif paiement_client.credit__sum == None %}
+                            <h2> {{ credit_client.credit__sum|sub:0|add_decimal:2 }}$</h2>
+
+                        {% endif %}
+
+                    {% else %}
+                        
+                        <h2> {{ total_credit.credit__sum|sub:total_paiement.credit__sum|add_decimal:2 }}$</h2>
+
+                    {% endif %}
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+{% endblock body %}

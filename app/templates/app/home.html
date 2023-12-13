@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+
+{% block body %}
+
+
+
+    <div class="container-home">
+
+
+        <div class="options">
+
+
+            <li>
+                <a href="{% url 'app:credits' %}"><img src="{% static 'app/img/credit.png' %}"></a>
+                <span>ДОЛГИ</span>
+
+            </li>
+
+            <li>
+                <a href="{% url 'app:paiements-credits' %}"><img src="{% static 'app/img/paiement.png' %}"></a>
+                <span>ОПЛАТА ДОЛГА</span>
+
+            </li>
+
+
+            <li>
+                <a href="{% url 'app:clients' %}"> <img src="{% static 'app/img/clients.jpeg' %}"></a>
+                <span>КЛИЕНТЫ</span>
+
+            </li>
+
+
+            <li>
+
+                <a href="{% url 'app:add-dates' %}"><img src="{% static 'app/img/dates.png' %}"></a>
+                <span>ДАТЫ</span>
+
+            </li>
+
+            <li>
+                <a href="{% url 'app:logout' %}"> <img src="{% static 'app/img/logout.png' %}"></a>
+                <span>LOGOUT</span>
+
+            </li>
+
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+{% endblock body %}

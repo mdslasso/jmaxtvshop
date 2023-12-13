@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+
+{% block body %}
+
+
+
+    <div class="container-client">
+
+    {% include 'includes/menu.html' %}
+
+    <div class="cadre-client">
+
+        <div class="client-list">
+
+            {% include 'includes/menu_clients.html' %}
+
+        </div>
+
+
+        <div class="client-credit-paiement" style="background-color: aquamarine">
+
+            <div class="cadre-form" style="background-color: aquamarine">
+
+                <h1>
+                    Редактировать информацию о клиенте <span
+                >{{ object.nom }}</span>
+                </h1><br>
+
+                <form method="post" enctype="multipart/form-data">
+
+                    {% csrf_token %}
+                    {{ form|crispy }}
+
+                    <br><br>
+
+                    <div class="form-group" style="margin: 10px; text-align: center">
+
+
+                        <a class="btn btn-success" href="{% url 'app:clients' %}">Отмена</a>
+
+                        <button class="btn btn-danger" type="submit">Сохранять</button>
+
+                    </div>
+
+
+                </form>
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+{% endblock body %}

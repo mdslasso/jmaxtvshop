@@ -1,0 +1,153 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% load django_template_maths %}
+
+
+{% block body %}
+
+
+    <div class="container-client">
+
+        {% include 'includes/menu.html' %}
+
+        <div class="cadre-client">
+
+            <div class="client-list">
+                {% include 'includes/menu_cartes.html' %}
+
+            </div>
+
+            <div class="client-carte-credit-paiement">
+
+                <div class="entete-carte">
+
+
+                    <div class="nom-carte" style="background-image: url( '{% static 'app/img/carte-visa.jpeg' %}')">
+
+
+                        <h2>1568 4948 8909 1902</h2>
+                        <h1>LANCINE SYLLA</h1>
+
+
+                    </div>
+
+                    <div class="bilan">
+
+                        <h1>ДОЛГИ : <span> 100$ </span></h1>
+                        <h1>ОПЛАТА : <span> 200$ </span></h1>
+
+                    </div>
+
+                </div>
+
+
+                <div class="credit-carte">
+
+                    <div class="cartes">
+                        <div class="entete-table-client">
+                            <li>Накладная</li>
+                            <li>Сума</li>
+                            <li>Оплата</li>
+                            <li>Дата</li>
+                            <li>Дата</li>
+
+
+                        </div>
+
+
+                        <div class="carte-cadre-credit">
+
+                            <table>
+
+
+                                <tbody>
+
+
+                                <tr>
+
+                                    <td style=""> 111111111</td>
+                                    <td>30$</td>
+                                    <td style="color: red">6575</td>
+                                    <td>hwhhw</td>
+                                    <td>hwhhw</td>
+
+
+                                </tr>
+                                <tr>
+
+                                    <td style=""> 111111111</td>
+                                    <td>30$</td>
+                                    <td style="color: red">6575</td>
+                                    <td>hwhhw</td>
+                                    <td>hwhhw</td>
+
+
+                                </tr>
+
+
+                                </tbody>
+
+
+                            </table>
+
+
+                        </div>
+
+                        <div class="action-carte"><a href="">+ Paiement carte</a></div>
+
+
+                    </div>
+
+                    <div class="depots">
+                        <div class="entete-table-client">
+                            <li>Дата</li>
+                            <li>Сума</li>
+
+                        </div>
+
+
+                        <div class="carte-cadre-depot">
+
+                            <table>
+
+
+                                <tbody>
+
+
+                                <tr>
+
+                                    <td style="text-align: center"> 111111111</td>
+                                    <td>30$</td>
+
+
+                                </tr>
+
+
+                                </tbody>
+
+
+                            </table>
+
+
+                        </div>
+
+
+                        <div class="action-carte"><a href="">+ Depot magasin</a></div>
+
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+{% endblock body %}
